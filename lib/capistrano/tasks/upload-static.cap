@@ -1,0 +1,13 @@
+namespace :deploy do
+
+  desc 'Upload static files to server'
+  
+  task :scalape do
+    on roles(:app), in: :sequence, wait: 5 do
+      current_file_path = File.dirname(__FILE__)
+      static_dir = File.expand_path("../../../web/_site/",current_file_path)
+      upload!(static_dir, ".", :via => :scp, :recursive => true)
+    end
+  end
+
+end

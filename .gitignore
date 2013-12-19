@@ -1,3 +1,6 @@
 _site/
 .DS_Store
 .ruby-version
+scala.pe.sublime-project
+scala.pe.sublime-workspace
+Gemfile.lock
